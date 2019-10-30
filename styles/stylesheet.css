@@ -1,0 +1,100 @@
+#board {
+    background-color:#4C382D;
+    width: 1000px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#tilesBox {
+    background-color:#63534C;
+    width: 200px;
+    height: 35px;
+    margin-right: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight:bold;
+    color: white;
+    text-align: center;
+}
+
+#scoreBox {
+    background-color:#63534C;
+    width: 120px;
+    height: 35px;
+    margin-right: 225px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight:bold;
+    color: white;
+    text-align: center;
+}
+
+#matrixContainerBackground {
+    background-color: #251211;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin: auto;
+    top: 100px;
+}
+
+#matrixContainer {
+    background-color: #251211;
+    width: 285px;
+    height: 285px;
+    position: relative;
+    margin: auto;
+    top: 100px;
+    transition: transform 0.8s ease;
+}
+
+.wrongTile {
+    background-color: #4C382D;
+    width: 50px;
+    height: 50px;
+    margin-right: 3.5px;
+    margin-left: 3.5px;
+    margin-top: 3.5px;
+    margin-bottom: 3.5px;
+    float: left;
+    border-width: 5px;
+    border-color:#251211;
+    transition: all 0.8s ease;
+}
+
+.correctTile {
+    background-color: #4C382D;
+    width: 50px;
+    height: 50px;
+    margin-right: 3.5px;
+    margin-left: 3.5px;
+    margin-top: 3.5px;
+    margin-bottom: 3.5px;
+    float: left;
+    border-width: 5px;
+    border-color:#251211;
+    transition: all 0.8s ease;
+}
+
+#startButton {
+    background-color:#63534C;
+    width: 200px;
+    height: 35px;
+    margin-left: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight:bold;
+    color: white;
+    text-align: center;
+}
