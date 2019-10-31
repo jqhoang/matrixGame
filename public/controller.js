@@ -219,8 +219,12 @@ function hideQuestions ()
 }
 
 function rotateMatrix () {
-    //TODO make this animate
-    document.getElementById("matrixContainer").style.transform = "rotate(90deg)";
+    let choice = Math.floor(Math.random() * 2);
+    if(choice == 1) {
+        document.getElementById("matrixContainer").style.transform = "rotate(90deg)";
+    } else {
+        document.getElementById("matrixContainer").style.transform = "rotate(-90deg)";
+    }
 }
 
 function newRound () {
@@ -283,7 +287,10 @@ function psuedoRandomUpdateState () {
             state.rows = state.rows - 1;
         } else if (state.rows < state.columns) {
             state.columns = state.columns - 1;
-        } else {
+        } else if (state.numberQuestionTiles == 1) {
+            //Do not decrease to 0 tiles
+        }
+        else {
             let choice = Math.floor(Math.random() * 3);
             if(choice == 0) 
             {
@@ -306,17 +313,19 @@ function psuedoRandomUpdateState () {
             state.rows = state.rows + 1;
         } else {
             let choice = Math.floor(Math.random() * 3);
-            if(choice == 0) 
+            //Do not let question tiles exceed matrix capacity
+            let tileCheck = state.numberQuestionTiles == state.rows * state.columns;
+            if(choice == 2 && !tileCheck) 
+            {
+                state.numberQuestionTiles = state.numberQuestionTiles + 1;
+            }
+            else if(choice == 0) 
             {
                 state.rows = state.rows + 1;
             }
-            if(choice == 1) 
+            else
             {
                 state.columns = state.columns + 1;
-            }
-            if(choice == 2) 
-            {
-                state.numberQuestionTiles = state.numberQuestionTiles + 1;
             }
         }
     }
