@@ -1,11 +1,13 @@
 let express = require('express');
 let router = express.Router();
 
+router.post('/sendScore', (req, res) => {
+    let score = req.body;   
+    res.render('submit', {score:'score'});
+})
+
 router.post('/submitScore', (req, res) => {
-    var score = req.body.score;
-    var name= req.body.name;
-    
-    res.redirect(301, '/');
+
 })
 
 module.exports = router;

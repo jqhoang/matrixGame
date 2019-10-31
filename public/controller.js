@@ -8,9 +8,11 @@ let state  =
     selectedTiles: 0,
     oneWrong: false,
     ready: false
+
+
 }
 
-//TODO add terminate button
+//TODO add terminate button functionality
 //TODO server stuff
 //TODO strings file
 //TODO file heiarchy
@@ -186,9 +188,15 @@ function startButtonOnClick () {
     generateTerminateButton();
 }
 
-function terminateButtonOnClick() {
-
+async function terminateButtonOnClick() {
+    let score = document.getElementById("scoreBox").innerText;
+    const intermediary = {
+        body: score,
+        method: "POST"
+    }
+    response = await fetch('sendScore', intermediary);
 }
+
 
 function displayQuestions () {
     for(let idIndex = 0; idIndex <  state.correctTiles.length; idIndex++){
