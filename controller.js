@@ -7,7 +7,9 @@ let state  =
     correctTiles: [],
     selectedTiles: 0,
     oneWrong: false,
-    ready: false
+    ready: false,
+    correctNoise: new Audio("./audio/correct_noise.ogg"),
+    incorrectNoise: new Audio("./audio/incorrect_noise.ogg")
 }
 
 //TODO add terminate button
@@ -150,6 +152,7 @@ function correctTileOnClick (correctTile) {
         state.selectedTiles = state.selectedTiles + 1;
         updateTilesSelected();
         updateScore(1);
+        state.correctNoise.play();
         if(state.selectedTiles == state.numberQuestionTiles)
         {
             newRound();
@@ -169,6 +172,7 @@ function wrongTileOnClick (wrongTile) {
         state.selectedTiles = state.selectedTiles + 1;
         updateTilesSelected();
         updateScore(-1);
+        state.incorrectNoise.play();
         if(state.selectedTiles == state.numberQuestionTiles)
         {
             newRound();
@@ -183,7 +187,7 @@ function startButtonOnClick () {
 }
 
 function terminateButtonOnClick() {
-    
+
 }
 
 function displayQuestions () {
