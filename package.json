@@ -22,7 +22,7 @@
     "npm": "6.9.0"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "handlebars": "^4.5.1",
     "nodemon": "^1.19.4"
   }
